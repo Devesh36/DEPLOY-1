@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.post("/deploy", async (req, res) => {
     const repoUrl = req.body.repoUrl;
-    const id = generate(); // asd12
+    const id = generate(); 
     await simpleGit().clone(repoUrl, path.join(__dirname, `output/${id}`));
 
     const files = getAllFiles(path.join(__dirname, `output/${id}`));
@@ -30,8 +30,7 @@ app.post("/deploy", async (req, res) => {
 
     await new Promise((resolve) => setTimeout(resolve, 5000))
     publisher.lPush("build-queue", id);
-    // INSERT => SQL
-    // .create => 
+    
     publisher.hSet("status", id, "uploaded");
 
     res.json({

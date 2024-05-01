@@ -10,7 +10,7 @@ const s3 = new S3({
 const app = express();
 
 app.get("/*", async (req, res) => {
-    // id.100xdevs.com
+  
     const host = req.hostname;
 
     const id = host.split(".")[0];

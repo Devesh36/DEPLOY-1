@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="flex-[1] flex flex-col justify-start mr-10">
        
         <p className="paragraph mt-4 max-w-[312px]">
-          A new way to make the voting easy, reliable and secure.
+          A new way to make the Deploy easy, reliable and secure.
         </p>
       </div>
 
